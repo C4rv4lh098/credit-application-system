@@ -1,4 +1,4 @@
-package edu.rodrigo.credit.application.system.dto
+package edu.rodrigo.credit.application.system.dto.response
 
 import edu.rodrigo.credit.application.system.entity.Credit
 import edu.rodrigo.credit.application.system.enummeration.Status
