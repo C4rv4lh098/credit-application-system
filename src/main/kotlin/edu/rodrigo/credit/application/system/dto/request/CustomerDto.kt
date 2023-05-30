@@ -28,7 +28,7 @@ class CustomerDto(
         val email: String,
 
         @field:NotEmpty(message = "Invalid Imput")
-        val passowrd: String,
+        val password: String,
 
         @field:NotEmpty(message = "Invalid Imput")
         val zipCode: String,
@@ -43,7 +43,7 @@ class CustomerDto(
             cpf = this.cpf,
             income = this.income,
             email = this.email,
-            password = this.passowrd,
+            password = this.password,
             address = Address(
                     zipCode = this.zipCode,
                     street = this.street
