@@ -1,4 +1,4 @@
-package edu.rodrigo.credit.application.system.dto
+package edu.rodrigo.credit.application.system.dto.response
 
 import edu.rodrigo.credit.application.system.entity.Customer
 import java.math.BigDecimal

@@ -1,10 +1,11 @@
 package edu.rodrigo.credit.application.system.controller
 
-import edu.rodrigo.credit.application.system.dto.CreditDto
-import edu.rodrigo.credit.application.system.dto.CreditView
-import edu.rodrigo.credit.application.system.dto.CreditViewList
+import edu.rodrigo.credit.application.system.dto.request.CreditDto
+import edu.rodrigo.credit.application.system.dto.response.CreditView
+import edu.rodrigo.credit.application.system.dto.response.CreditViewList
 import edu.rodrigo.credit.application.system.entity.Credit
 import edu.rodrigo.credit.application.system.service.impl.CreditService
+import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
@@ -23,7 +24,7 @@ class CreditResource(
         private val creditService: CreditService
 ) {
     @PostMapping
-    fun saveCredit(@RequestBody creditDto: CreditDto): ResponseEntity<String> {
+    fun saveCredit(@RequestBody @Valid creditDto: CreditDto): ResponseEntity<String> {
         val credit: Credit = this.creditService.save(creditDto.toEntity())
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("Credit ${credit.creditCode} - Customer ${credit.customer?.firstName} saved")
